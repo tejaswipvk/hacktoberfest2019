@@ -13,7 +13,7 @@ e = 65537
 assert GCD(e, phin) == 1
 d = inverse(e, phin)
 
-message = bytes_to_long(flag)
+message = bytes_to_long(flages)
 ciphertext = pow(message, e, n)
 ciphertext = long_to_bytes(ciphertext)
 ciphertext = ciphertext.encode("hex")
@@ -21,4 +21,4 @@ ciphertext = ciphertext.encode("hex")
 obj1 = open("data.txt",'w')
 write_data = "[1] Ciphertext: " + ciphertext + "\n" + "[2] Modulus: " + str(n) + "\n" + "[3] Public Key exponent: " + str(e) + "\n" + "[4] s: " + str(s)
 obj1.write(write_data)
-obj1.close()
+
